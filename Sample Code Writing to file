@@ -5,6 +5,7 @@ using cAlgo.Indicators;
 using System.IO;
 
 // CREDIT GOES TO CTRADER/SPOTWARE ADMIN //
+//  CBOT 
 
 namespace cAlgo.Robots
 {

@@ -1,0 +1,37 @@
+using System;
+using cAlgo.API;
+using cAlgo.API.Indicators;
+using cAlgo.Indicators;
+using System.IO;
+
+// CREDIT GOES TO CTRADER/SPOTWARE ADMIN //
+
+namespace cAlgo.Robots
+{
+    [Robot]
+    public class WriteToFileExample : Robot
+    {
+        StreamWriter _fileWriter;
+    	
+    	
+        protected override void OnStart()
+        {
+			var desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+			var filePath = Path.Combine(desktopFolder, "ServerTimeExample.txt"); 
+			
+			_fileWriter = File.AppendText(filePath);//creating file
+			
+			_fileWriter.AutoFlush = true;//file will be saved on each change
+        }
+        
+        protected override void OnTick()
+        {
+			_fileWriter.WriteLine("Server Time: " + Server.Time);
+        }
+        
+        protected override void OnStop()
+        {
+        	_fileWriter.Close();
+        }
+    }
+}

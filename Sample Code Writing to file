@@ -4,7 +4,8 @@ using cAlgo.API.Indicators;
 using cAlgo.Indicators;
 using System.IO;
 
-// CREDIT GOES TO CTRADER/SPOTWARE ADMIN //
+// CREDIT GOES TO CTRADER/SPOTWARE ADMIN 
+// Writing to File 
 //  CBOT 
 
 namespace cAlgo.Robots
